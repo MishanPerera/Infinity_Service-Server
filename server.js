@@ -58,6 +58,21 @@ const postponeRouter = require("./routes/progressRoutes/postponeds.js");
 app.use("/postpone",postponeRouter);
 
 
+
+//employee 
+const empRouter = require("./routes/employeeRoutes/emp.js");
+const attendanceRouter = require("./routes/employeeRoutes/attendance.js");
+const salaryRouter = require("./routes/employeeRoutes/salary.js");
+
+
+app.use("/employee",empRouter);
+app.use("/attendance",attendanceRouter);
+app.use("/salary",salaryRouter);
+
+
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
 })
