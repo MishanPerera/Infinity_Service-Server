@@ -69,7 +69,18 @@ app.use("/employee",empRouter);
 app.use("/attendance",attendanceRouter);
 app.use("/salary",salaryRouter);
 
+//supplier
+const supplierRouter = require("./routes/supplierRoutes/suppliers.js");
 
+app.use("/supplier",supplierRouter);
+
+const agreementRouter = require("./routes/supplierRoutes/agreements.js");
+
+app.use("/agreement",agreementRouter);
+
+const orderRouter = require("./routes/supplierRoutes/orders.js");
+
+app.use("/order",orderRouter);
 
 
 
