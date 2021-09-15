@@ -69,9 +69,40 @@ app.use("/employee",empRouter);
 app.use("/attendance",attendanceRouter);
 app.use("/salary",salaryRouter);
 
+//financial
+const paymentRouter = require("./routes/financialRoutes/payments.js");
+
 
 //customer
 const customerRouter = require("./routes/customerRoutes/customers.js");
+
+app.use("/payment",paymentRouter);
+
+const pendingRouter = require("./routes/financialRoutes/pendings.js");
+
+app.use("/pending",pendingRouter);
+
+const utilityRouter = require("./routes/financialRoutes/utilities.js");
+
+app.use("/utility",utilityRouter);
+
+const profitRouter = require("./routes/financialRoutes/profits.js");
+
+app.use("/profit",profitRouter);
+
+//supplier
+const supplierRouter = require("./routes/supplierRoutes/suppliers.js");
+
+app.use("/supplier",supplierRouter);
+
+const agreementRouter = require("./routes/supplierRoutes/agreements.js");
+
+app.use("/agreement",agreementRouter);
+
+const orderRouter = require("./routes/supplierRoutes/orders.js");
+
+app.use("/order",orderRouter);
+
 
 app.use("/customer", customerRouter)
 
