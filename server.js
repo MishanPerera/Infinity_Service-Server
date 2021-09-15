@@ -50,6 +50,14 @@ const availabilityRouter = require("./routes/inventoryRoutes/availabilities.js")
 
 app.use("/availability",availabilityRouter);
 
+//work progress
+//variable declaration and import model file
+const progressRouter = require("./routes/progressRoutes/progresses.js");
+app.use("/progress",progressRouter);
+const postponeRouter = require("./routes/progressRoutes/postponeds.js");
+app.use("/postpone",postponeRouter);
+
+
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
 })
