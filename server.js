@@ -70,7 +70,10 @@ app.use("/attendance",attendanceRouter);
 app.use("/salary",salaryRouter);
 
 
+//customer
+const customerRouter = require("./routes/customerRoutes/customers.js");
 
+app.use("/customer", customerRouter)
 
 
 app.listen(PORT, () => {
