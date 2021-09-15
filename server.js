@@ -26,6 +26,7 @@ connection.once("open", () => {
     console.log("MongoDB Connection Success!!!")
 })
 
+//service
 const facilityRouter = require("./routes/serviceRoutes/facilities.js")
 app.use("/facility",facilityRouter);
 
@@ -34,6 +35,20 @@ app.use("/nservice",normalServiceRouter);
 
 const fullServiceRouter = require("./routes/serviceRoutes/fullservices.js")
 app.use("/fservice",fullServiceRouter);
+
+//inventory
+
+const inventoryRouter = require("./routes/inventoryRoutes/inventories.js");
+
+app.use("/inventory",inventoryRouter);
+
+const priceRouter = require("./routes/inventoryRoutes/prices.js");
+
+app.use("/price",priceRouter);
+
+const availabilityRouter = require("./routes/inventoryRoutes/availabilities.js");
+
+app.use("/availability",availabilityRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`)
