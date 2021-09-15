@@ -69,7 +69,6 @@ app.use("/employee",empRouter);
 app.use("/attendance",attendanceRouter);
 app.use("/salary",salaryRouter);
 
-<<<<<<< HEAD
 //financial
 const paymentRouter = require("./routes/financialRoutes/payments.js");
 
@@ -86,10 +85,9 @@ app.use("/utility",utilityRouter);
 const profitRouter = require("./routes/financialRoutes/profits.js");
 
 app.use("/profit",profitRouter);
-=======
+
 //supplier
 const supplierRouter = require("./routes/supplierRoutes/suppliers.js");
->>>>>>> 7c9f5535c0eefde4d32c59310323d931a56653a5
 
 app.use("/supplier",supplierRouter);
 
