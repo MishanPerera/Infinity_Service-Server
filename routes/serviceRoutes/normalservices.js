@@ -42,6 +42,15 @@ router.route("/").get((req,res)=>{
     })
 })
 
+//Read 
+router.route("/normal").get((req,res)=>{
+     NormalService.find().then((normalservices)=>{ 
+         res.json(normalservices) 
+        }).catch((err)=>{ 
+            console.log(err) 
+        }) 
+    })
+
 //CANCEL
 router.route("/cancel/:sid").delete(async(req,res)=>{
     let sId= req.params.sid;
