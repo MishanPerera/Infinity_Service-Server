@@ -39,15 +39,10 @@ app.use("/fservice",fullServiceRouter);
 //inventory
 
 const inventoryRouter = require("./routes/inventoryRoutes/inventories.js");
-
 app.use("/inventory",inventoryRouter);
-
 const priceRouter = require("./routes/inventoryRoutes/prices.js");
-
 app.use("/price",priceRouter);
-
 const availabilityRouter = require("./routes/inventoryRoutes/availabilities.js");
-
 app.use("/availability",availabilityRouter);
 
 //work progress
@@ -56,7 +51,6 @@ const progressRouter = require("./routes/progressRoutes/progresses.js");
 app.use("/progress",progressRouter);
 const postponeRouter = require("./routes/progressRoutes/postponeds.js");
 app.use("/postpone",postponeRouter);
-
 
 
 //employee 
@@ -75,19 +69,12 @@ const paymentRouter = require("./routes/financialRoutes/payments.js");
 
 //customer
 const customerRouter = require("./routes/customerRoutes/customers.js");
-
 app.use("/payment",paymentRouter);
-
 const pendingRouter = require("./routes/financialRoutes/pendings.js");
-
 app.use("/pending",pendingRouter);
-
 const utilityRouter = require("./routes/financialRoutes/utilities.js");
-
 app.use("/utility",utilityRouter);
-
 const profitRouter = require("./routes/financialRoutes/profits.js");
-
 app.use("/profit",profitRouter);
 
 //supplier

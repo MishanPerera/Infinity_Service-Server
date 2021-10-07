@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { request } = require("express");
 let payment = require("../../models/financialModels/payment")
+let NormalService = require("../../models/serviceModels/NormalService")
 
 
 router.route("/add").post((req, res)=>{
@@ -28,7 +29,13 @@ router.route("/add").post((req, res)=>{
 
 })
 
-
+    router.route("/finance").get((req,res)=>{
+    NormalService.find().then((normalServices)=>{
+        res.json(normalServices)
+    }).catch((err)=>{
+        console.log(err)
+    })
+})
 
 router.route("/").get((req, res)=>{
 

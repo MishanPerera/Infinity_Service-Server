@@ -32,6 +32,8 @@ router.route("/add").post((req,res)=> {
 
 })
 
+
+
 //RETRIEVE
 router.route("/").get((req,res)=>{
 
@@ -41,6 +43,15 @@ router.route("/").get((req,res)=>{
         console.log(err)
     })
 })
+
+//Read 
+router.route("/normal").get((req,res)=>{
+     NormalService.find().then((normalservices)=>{ 
+         res.json(normalservices) 
+        }).catch((err)=>{ 
+            console.log(err) 
+        }) 
+    })
 
 //CANCEL
 router.route("/cancel/:sid").delete(async(req,res)=>{
