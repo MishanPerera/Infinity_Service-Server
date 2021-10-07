@@ -26,7 +26,7 @@ const orderSchema = new Schema({
     },
     paymentDate:{
         type : String,
-        required: true
+        required: false
     }
 
 })
