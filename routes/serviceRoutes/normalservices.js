@@ -55,16 +55,14 @@ router.route("/cancel/:sid").delete(async(req,res)=>{
     })
 })
 
-//SEARCH
-router.route("/search/:entryDate").get(async(req,res)=>{
-    let eDate= req.params.entryDate;
 
-    const service = await NormalService.find({entryDate:eDate}).then((normalServices)=>{
-        res.status(200).send({status: "Normal Services are fetched for relevant date", normalServices})
 
+//Read
+router.route("/normal").get((req,res)=>{
+    NormalService.find().then((normalservices)=>{
+        res.json(normalservices)
     }).catch((err)=>{
-        console.log(err.message)
-        res.status(500).send({status: "Error with get services...", error: err.message})
+        console.log(err)
     })
 })
 

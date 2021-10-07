@@ -33,18 +33,6 @@ router.route("/add").post((req,res)=> {
 
 })
 
-/*RETRIEVE
-router.route("/retrieve/:serviceType").get(async(req,res)=>{
-    let type= req.params.serviceType;
-
-    const sFacility = await ServiceFacility.find({serviceType:type}).then((serviceFacilities)=>{
-        res.status(200).send({status: "Normal Service Facilities are fetched", serviceFacilities})
-
-    }).catch((err)=>{
-        console.log(err.message)
-        res.status(500).send({status: "Error with get facilities...", error: err.message})
-    })
-})*/
 //RETRIEVE
 router.route("/").get((req,res)=>{
 
@@ -68,16 +56,12 @@ router.route("/cancel/:sid").delete(async(req,res)=>{
     })
 })
 
-//SEARCH
-router.route("/search/:entryDate").get(async(req,res)=>{
-    let eDate= req.params.entryDate;
-
-    const service = await FullService.find({entryDate:eDate}).then((fullService)=>{
-        res.status(200).send({status: "Full Services are fetched for relevant date", fullService})
-
+//Read
+router.route("/full").get((req,res)=>{
+    FullService.find().then((fullservices)=>{
+        res.json(fullservices)
     }).catch((err)=>{
-        console.log(err.message)
-        res.status(500).send({status: "Error with get services...", error: err.message})
+        console.log(err)
     })
 })
 
