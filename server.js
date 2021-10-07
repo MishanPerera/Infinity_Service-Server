@@ -66,16 +66,25 @@ app.use("/salary",salaryRouter);
 //financial
 const paymentRouter = require("./routes/financialRoutes/payments.js");
 
+app.use("/payment",paymentRouter);
+
+const pendingRouter = require("./routes/financialRoutes/pendings.js");
+
+app.use("/pending",pendingRouter);
+
+const utilityRouter = require("./routes/financialRoutes/utilities.js");
+
+app.use("/utility",utilityRouter);
+
+const profitRouter = require("./routes/financialRoutes/profits.js");
+
+app.use("/profit",profitRouter);
+
 
 //customer
 const customerRouter = require("./routes/customerRoutes/customers.js");
 app.use("/payment",paymentRouter);
-const pendingRouter = require("./routes/financialRoutes/pendings.js");
-app.use("/pending",pendingRouter);
-const utilityRouter = require("./routes/financialRoutes/utilities.js");
-app.use("/utility",utilityRouter);
-const profitRouter = require("./routes/financialRoutes/profits.js");
-app.use("/profit",profitRouter);
+
 
 //supplier
 const supplierRouter = require("./routes/supplierRoutes/suppliers.js");
